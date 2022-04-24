@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Главная{% endblock %}
+{% block content %}
+    <h1>{{ post_list.film }}</h1>
+    <div class="card-body">
+        <p class="card-text">
+            {% for film in post_list %}
+                <p>{{ film.title }}</p>
+                <p>{{ film.description }}</p>
+                <p>{{ film.actors }}</p>
+                <p>{{ film.year }}</p>
+                <p>{{ film.country}}</p>
+                <p>{{ film.genres }}</p>
+            {% include 'comments.html' %}
+            {% endfor %}
+        </p>
+
+    </div>
+{% endblock %}
